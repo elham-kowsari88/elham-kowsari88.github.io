@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Elham Kowsari | Applied Control & Automation</title>
 
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -81,6 +82,17 @@ section { margin-top: 40px; }
   display: block;
 }
 
+ .figure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.figure-grid img {
+  width: 100%;
+  border-radius: 8px;
+}   
   </style>
 </head>
 
@@ -125,7 +137,13 @@ section { margin-top: 40px; }
     in grapple oscillations without additional sensors.
     </p>
 
-    <img src="sway_result.png" alt="Sway motion comparison" style="width:100%; border-radius:10px; margin-top:10px;">
+    <div class="figure-grid">
+    <img src="Fig_2_ModofiedForwarder.JPG" alt="Crane and grapple model">
+    <img src="Fig_1_modifiedOptimalController.JPG" alt="Sway motion without controller">
+    <img src="Swaymotion-Slew.JPG" alt="Sway motion with controller">
+    <img src="Swaymotion-NearFar.JPG" alt="Performance comparison">
+</div>
+
 
     <div class="links">
         <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11357902/" target="_blank">📄 Paper</a>
