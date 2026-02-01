@@ -3,96 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elham Kowsari | Applied Control & Automation</title>
-
+  <title>Dr. Elham Kowsari | Applied Control & Automation</title>
 
   <style>
+    :root{
+      --primary:#0b3d91;
+      --bg:#f7f9fc;
+      --text:#222;
+      --muted:#666;
+      --card:#ffffff;
+      --shadow:0 4px 12px rgba(0,0,0,0.08);
+      --radius:12px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f9fc;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+
     header {
-      background: #0b3d91;
+      background: var(--primary);
       color: white;
-      padding: 60px 20px;
+      padding: 56px 20px;
       text-align: center;
     }
-    h1 { margin: 0; font-size: 36px; }
-    h2 { color: #0b3d91; margin-top: 40px; }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 0.2px;
+    }
+
+    header p {
+      margin: 12px 0 0;
+      opacity: 0.95;
+      font-size: 15px;
+    }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px;
     }
-    .links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #0b3d91;
-      font-weight: bold;
+
+    h2 {
+      color: var(--primary);
+      margin: 40px 0 10px;
+      font-size: 22px;
     }
+
     .card {
-      background: white;
+      background: var(--card);
       padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: var(--radius);
+      margin-top: 16px;
+      box-shadow: var(--shadow);
     }
+
+    /* Top profile links */
+    .top-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 18px 0 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid rgba(11,61,145,0.18);
+      background: white;
+      color: var(--primary);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    }
+
+    /* Small inline links inside cards */
+    .meta-links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-links span,
+    .meta-links a {
+      font-size: 14px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .meta-links .muted {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* Figure gallery (clean + consistent) */
+    .figure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .fig {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .fig a { text-decoration: none; display: block; }
+
+    .fig img {
+      width: 100%;
+      height: 230px;        /* same tile height */
+      object-fit: contain;  /* show full figure */
+      border-radius: 10px;
+      background: #f3f5f9;
+      display: block;
+    }
+
+    .fig p {
+      margin: 8px 0 0;
+      font-size: 13px;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 740px) {
+      .figure-grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 30px; }
+    }
+
     footer {
       text-align: center;
-      padding: 30px;
-      margin-top: 40px;
+      padding: 28px;
+      margin-top: 34px;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
-    /* --- Animations --- */
-.fade-up {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-/* nicer spacing on sections */
-section { margin-top: 40px; }
-
-/* project grid */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* media inside cards */
-.media {
-  margin-top: 12px;
-  border-radius: 12px;
-  width: 100%;
-  display: block;
-}
-
- .figure-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.figure-grid img {
-  width: 100%;
-  border-radius: 8px;
-}   
+    /* --- Fade-in animation on scroll --- */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -105,15 +186,15 @@ section { margin-top: 40px; }
 
 <div class="container">
 
-  <div class="links" style="text-align:center; margin-top:20px;">
-    <a href="https://scholar.google.com/citations?user=OCUpHMwAAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://www.researchgate.net/profile/Elham-Kowsari?ev=hdr_xprf" target="_blank">ResearchGate</a>
-    <a href="https://www.linkedin.com/in/elhamkowsari/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/elham-kowsari88" target="_blank">GitHub</a>
+  <div class="top-links fade-up">
+    <a class="btn" href="https://scholar.google.com/citations?user=OCUpHMwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a class="btn" href="https://www.researchgate.net/profile/Elham-Kowsari?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
+    <a class="btn" href="https://www.linkedin.com/in/elhamkowsari/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/elham-kowsari88" target="_blank" rel="noopener">GitHub</a>
   </div>
 
-  <h2>About Me</h2>
-  <div class="card">
+  <h2>About</h2>
+  <div class="card fade-up">
     <p>
       I design and validate control and estimation algorithms for heavy-duty machines,
       bridging research and real industrial constraints such as actuator limits, delays,
@@ -123,42 +204,61 @@ section { margin-top: 40px; }
     </p>
   </div>
 
-  <h2>Selected Projects (Industrial & Research)</h2>
+  <h2>Selected Research & Industrial Projects</h2>
 
-<h2>Research Projects</h2>
-
-<div class="card">
-    <h3>Optimal Sway Motion Reduction in Forestry Cranes (2024)</h3>
+  <div class="card fade-up">
+    <h3 style="margin-top:0;">Optimal Sway Motion Reduction in Forestry Cranes (2024)</h3>
 
     <p>
-    This project presents a novel optimal feedforward controller for reducing sway motion 
-    in forestry cranes equipped with passive grapples. The method was validated using 
-    a high-fidelity industrial forwarder simulator and achieved more than 60% reduction 
-    in grapple oscillations without additional sensors.
+      This project presents an optimal feedforward controller for reducing sway motion in
+      forestry cranes equipped with passive grapples. The method was validated in a
+      high-fidelity forwarder simulator and demonstrated strong reduction in grapple oscillations
+      without additional sensors.
     </p>
 
     <div class="figure-grid">
-    <img src="Fig_2_ModofiedForwarder.JPG" alt="Crane and grapple model">
-    <img src="Fig_1_modifiedOptimalController.JPG" alt="Sway motion without controller">
-    <img src="Swaymotion-Slew.jpg" alt="Sway motion with controller">
-    <img src="Swaymotion-NearFar.jpg" alt="Performance comparison">
-</div>
+      <div class="fig">
+        <a href="Fig_2_ModofiedForwarder.JPG" target="_blank" rel="noopener">
+          <img src="Fig_2_ModofiedForwarder.JPG" alt="Forestry crane model and coordinate definitions">
+        </a>
+        <p>Model & coordinate definitions</p>
+      </div>
 
+      <div class="fig">
+        <a href="Fig_1_modifiedOptimalController.JPG" target="_blank" rel="noopener">
+          <img src="Fig_1_modifiedOptimalController.JPG" alt="Optimal feedforward controller architecture">
+        </a>
+        <p>Optimal controller architecture</p>
+      </div>
 
-    <div class="links">
-        <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank">📄 Paper</a>
-        <a href="#">💻 Code: Available on request</a>
-        <a href="#">📊 Data: Industrial simulator (confidential)</a>
-        <a href="#">🎥 Video: Pending company approval</a>
+      <div class="fig">
+        <a href="Swaymotion-Slew.jpg" target="_blank" rel="noopener">
+          <img src="Swaymotion-Slew.jpg" alt="Sway motion response during slew motion">
+        </a>
+        <p>Sway reduction during slew motion</p>
+      </div>
+
+      <div class="fig">
+        <a href="Swaymotion-NearFar.jpg" target="_blank" rel="noopener">
+          <img src="Swaymotion-NearFar.jpg" alt="Near and far motion performance comparison">
+        </a>
+        <p>Near/far motion comparison</p>
+      </div>
     </div>
-</div>
 
+    <div class="meta-links">
+      <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">📄 Paper</a>
+      <span class="muted">💻 Code: available on request</span>
+      <span class="muted">📊 Data: industrial simulator (confidential)</span>
+      <span class="muted">🎥 Video: pending approval</span>
+    </div>
+  </div>
 
-  <div class="card">
+  <div class="card fade-up">
     <p><b>Forestry crane automation:</b> Sway reduction, obstacle avoidance, and trajectory tracking using MPC with actuator dynamics.</p>
   </div>
 
-  <div class="card">
+  <div class="card fade-up">
     <p><b>Double pendulum trajectory optimization:</b> Nonlinear modeling and optimization for underactuated systems.</p>
   </div>
 
@@ -167,6 +267,15 @@ section { margin-top: 40px; }
 <footer>
   © 2026 Elham Kowsari
 </footer>
+
+<script>
+  // Fade-in on scroll
+  const els = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.12 });
+  els.forEach(el => obs.observe(el));
+</script>
 
 </body>
 </html>
