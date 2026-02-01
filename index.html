@@ -156,6 +156,7 @@
       header h1 { font-size: 30px; }
     }
 
+    
     footer {
       text-align: center;
       padding: 28px;
@@ -174,6 +175,13 @@
       opacity: 1;
       transform: translateY(0);
     }
+.paper-video{
+  width:100%;
+  margin-top:12px;
+  border-radius:12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
   </style>
 </head>
 
@@ -246,13 +254,19 @@
       </div>
     </div>
 
-    <div class="meta-links">
-      <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">📄 Paper</a>
-      <span class="muted">💻 Code: available on request</span>
-      <span class="muted">📊 Data: industrial simulator (confidential)</span>
-      <span class="muted">🎥 Video: pending approval</span>
-    </div>
-  </div>
+<h4 style="margin-top:22px;">Simulation comparison (with and without controller)</h4>
+
+<video controls class="paper-video">
+  <source src="sway_comparison.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="links">
+   <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank">📄 Paper</a>
+   <span>💻 Code: available on request</span>
+   <span>📊 Data: industrial simulator (confidential)</span>
+   <span>🎥 Video: </span>
+</div>
 
   <div class="card fade-up">
     <p><b>Forestry crane automation:</b> Sway reduction, obstacle avoidance, and trajectory tracking using MPC with actuator dynamics.</p>
