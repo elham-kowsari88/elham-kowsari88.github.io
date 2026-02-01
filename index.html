@@ -47,6 +47,40 @@
       font-size: 14px;
       color: #666;
     }
+    /* --- Animations --- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* nicer spacing on sections */
+section { margin-top: 40px; }
+
+/* project grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* media inside cards */
+.media {
+  margin-top: 12px;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+}
+
   </style>
 </head>
 
