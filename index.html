@@ -3,359 +3,536 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Elham Kowsari | Applied Control & Automation</title>
+  <title>Dr. Elham Kowsari | Control & Automation for Robotics and Industrial Systems</title>
 
   <style>
     :root{
-      --primary:#0b3d91;
-      --bg:#f7f9fc;
-      --text:#222;
-      --muted:#666;
-      --card:#ffffff;
-      --shadow:0 4px 12px rgba(0,0,0,0.08);
-      --radius:12px;
+      --bg: #0b1220;
+      --bg2:#0e172b;
+      --card:#121c32;
+      --card2:#101a2f;
+      --text:#eaf0ff;
+      --muted:#a8b3d1;
+      --line: rgba(255,255,255,0.08);
+      --shadow: 0 14px 38px rgba(0,0,0,0.35);
+
+      --accent:#4da3ff;
+      --accent2:#7cc6ff;
+
+      --radius: 16px;
+      --radius2: 22px;
+      --max: 1100px;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: var(--bg);
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 600px at 30% 0%, rgba(77,163,255,0.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(124,198,255,0.12), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
       color: var(--text);
       line-height: 1.6;
     }
 
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 56px 20px;
-      text-align: center;
+    a{ color: var(--accent2); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    /* ====== NAV ====== */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,0.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(77,163,255,0.12);
+    }
+    .nav-links{
+      display:flex; flex-wrap:wrap; gap: 10px 14px;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(77,163,255,0.25);
+      text-decoration:none;
+      background: rgba(77,163,255,0.08);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
+    /* ====== LAYOUT ====== */
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .section-title{
+      margin: 42px 0 10px;
+      font-size: 22px;
       letter-spacing: 0.2px;
     }
-
-    header p {
-      margin: 12px 0 0;
-      opacity: 0.95;
-      font-size: 15px;
+    .section-sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 900px;
     }
 
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 22px;
+    /* ====== HERO ====== */
+    .hero{
+      padding: 34px 0 18px;
     }
-
-    h2 {
-      color: var(--primary);
-      margin: 40px 0 10px;
-      font-size: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: var(--radius);
-      margin-top: 16px;
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 22px;
+      padding: 22px;
+      align-items:center;
     }
 
-    /* Top profile links */
-    .top-links {
-      display: flex;
-      flex-wrap: wrap;
+    .photo{
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, rgba(77,163,255,0.25), rgba(124,198,255,0.12));
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      overflow:hidden;
+      margin: 0 auto;
+      position: relative;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .photo .placeholder{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      font-size: 56px;
+      color: rgba(234,240,255,0.85);
+      letter-spacing: 2px;
+    }
+
+    .hero h1{
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+    }
+    .hero .tagline{
+      margin: 10px 0 0;
+      color: rgba(234,240,255,0.92);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .hero .meta{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .hero .about{
+      margin: 16px 0 0;
+      color: rgba(234,240,255,0.92);
+    }
+
+    .pill-row{
+      display:flex; flex-wrap:wrap;
       gap: 10px;
-      justify-content: center;
-      margin: 18px 0 8px;
+      margin-top: 16px;
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding: 10px 12px;
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      border: 1px solid rgba(11,61,145,0.18);
-      background: white;
-      color: var(--primary);
-      transition: transform 150ms ease, box-shadow 150ms ease;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration:none;
+    }
+    .pill:hover{
+      background: rgba(77,163,255,0.10);
+      border-color: rgba(77,163,255,0.25);
+      text-decoration:none;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    /* ====== CARDS ====== */
+    .card{
+      background: rgba(18,28,50,0.70);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+      padding: 18px;
+      margin-top: 16px;
     }
-
-    /* Small inline links inside cards */
-    .meta-links {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: 0.2px;
     }
-
-    .meta-links span,
-    .meta-links a {
-      font-size: 14px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 700;
+    .card p{
+      margin: 10px 0;
+      color: rgba(234,240,255,0.90);
     }
-
-    .meta-links .muted {
+    .note{
+      margin-top: -2px;
       color: var(--muted);
-      font-weight: 600;
+      font-size: 13px;
     }
 
-    /* Figure gallery (clean + consistent) */
-    .figure-grid {
-      display: grid;
+    /* ====== FIGURE GRID ====== */
+    .figure-grid{
+      display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin-top: 14px;
     }
-
-    .fig {
-      background: #fff;
-      border-radius: 12px;
+    .fig{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
       padding: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
     }
-
-    .fig a { text-decoration: none; display: block; }
-
-    .fig img {
-      width: 100%;
+    .fig img{
+      width:100%;
       height: 230px;
       object-fit: contain;
-      border-radius: 10px;
-      background: #f3f5f9;
-      display: block;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      display:block;
     }
-
-    .fig p {
+    .fig p{
       margin: 8px 0 0;
       font-size: 13px;
-      text-align: center;
-      color: #333;
-      font-weight: 600;
+      color: rgba(234,240,255,0.86);
+      font-weight: 700;
+      text-align:center;
     }
 
-    /* Video */
-    .video-section{
-      margin-top: 18px;
-    }
-
+    /* ====== VIDEO ====== */
+    .video-section{ margin-top: 18px; }
     .video-title{
       margin: 18px 0 10px;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--accent2);
+      letter-spacing: 0.15px;
     }
-
     .paper-video{
-      width: 100%;
-      border-radius: 12px;
-      background: #000;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-      display: block;
+      width:100%;
+      border-radius: 14px;
+      background:#000;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+      display:block;
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
-    /* Mobile layout */
-    @media (max-width: 740px) {
-      .figure-grid { grid-template-columns: 1fr; }
-      header h1 { font-size: 30px; }
-    }
-
-    footer {
-      text-align: center;
-      padding: 28px;
-      margin-top: 34px;
-      font-size: 14px;
+    /* ====== META LINKS ====== */
+    .meta-links{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items:center;
       color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .meta-links a{
+      color: var(--accent2);
+      font-weight: 900;
     }
 
-    /* Fade-in animation on scroll */
-    .fade-up {
+    /* ====== FOOTER ====== */
+    footer{
+      margin: 44px 0 22px;
+      color: var(--muted);
+      text-align:center;
+      font-size: 13px;
+    }
+
+    /* ====== ANIMATIONS ====== */
+    .fade-up{
       opacity: 0;
       transform: translateY(14px);
       transition: opacity 700ms ease, transform 700ms ease;
     }
-    .fade-up.show {
+    .fade-up.show{
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 38px; text-align:center; }
+      .hero .tagline, .hero .meta, .hero .about{ text-align:center; }
+      .pill-row{ justify-content:center; }
+    }
+    @media (max-width: 740px){
+      .figure-grid{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 34px; }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Dr. Elham Kowsari</h1>
-  <p>Autonomous Systems & Control for Heavy-Duty Industrial Machines</p>
-</header>
-
-<div class="container">
-
-  <div class="top-links fade-up">
-    <a class="btn" href="https://scholar.google.com/citations?user=OCUpHMwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-    <a class="btn" href="https://www.researchgate.net/profile/Elham-Kowsari?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
-    <a class="btn" href="https://www.linkedin.com/in/elhamkowsari/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://github.com/elham-kowsari88" target="_blank" rel="noopener">GitHub</a>
-  </div>
-
-  <h2>About</h2>
-  <div class="card fade-up">
-    <p>
-<p>
-I am a control and automation researcher working at the intersection of advanced control theory and real
-industrial machinery. My work focuses on translating model predictive control, state estimation, and
-trajectory optimization into practical, fail-operational solutions for heavy-duty machines operating under
-real actuator limits, delays, underactuation, and safety constraints.
-
-I design complete pipelines from mathematical modeling and controller design to high-fidelity simulation
-and real-time validation using Simulink–Speedgoat and industrial simulators. My research has been applied
-to forestry cranes, articulated machines, autonomous vehicle subsystems, and navigation in GNSS-denied
-environments.
-
-By combining estimation theory, fault detection, and motion planning, I develop intelligent control
-architectures that remain reliable in the presence of uncertainty, actuator imperfections, and complex
-mechanical dynamics. My goal is to bridge academic control methods with the practical realities of
-industrial automation and autonomous heavy machinery.
-</p>
-
-    </p>
-  </div>
-
-  <h2>Selected Research & Industrial Projects</h2>
-
-  <div class="card fade-up">
-    <h3 style="margin-top:0;">Optimal Sway Motion Reduction in Forestry Cranes (2024)</h3>
-
-    <p>
-      This project presents an optimal feedforward controller for reducing sway motion in
-      forestry cranes equipped with passive grapples. The method was validated in a
-      high-fidelity forwarder simulator and demonstrated strong reduction in grapple oscillations
-      without additional sensors.
-    </p>
-
-    <div class="figure-grid">
-      <div class="fig">
-        <a href="Fig_2_ModofiedForwarder.JPG" target="_blank" rel="noopener">
-          <img src="Fig_2_ModofiedForwarder.JPG" alt="Forestry crane model and coordinate definitions">
-        </a>
-        <p>Model &amp; coordinate definitions</p>
-      </div>
-
-      <div class="fig">
-        <a href="Fig_1_modifiedOptimalController.JPG" target="_blank" rel="noopener">
-          <img src="Fig_1_modifiedOptimalController.JPG" alt="Optimal feedforward controller architecture">
-        </a>
-        <p>Optimal controller architecture</p>
-      </div>
-
-      <div class="fig">
-        <a href="Swaymotion-Slew.jpg" target="_blank" rel="noopener">
-          <img src="Swaymotion-Slew.jpg" alt="Sway motion response during slew motion">
-        </a>
-        <p>Sway reduction during slew motion</p>
-      </div>
-
-      <div class="fig">
-        <a href="Swaymotion-NearFar.jpg" target="_blank" rel="noopener">
-          <img src="Swaymotion-NearFar.jpg" alt="Near and far motion performance comparison">
-        </a>
-        <p>Near/far motion comparison</p>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="dot"></span> Elham Kowsari</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-
-    <div class="video-section">
-      <div class="video-title">Simulation comparison (with and without controller)</div>
-      <video controls class="paper-video" preload="metadata">
-        <source src="sway_comparison.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <div class="meta-links">
-      <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">📄 Paper</a>
-      <span class="muted">💻 Code: available on request</span>
-      <span class="muted">📊 Data: industrial simulator (confidential)</span>
-      <span class="muted">🎥 Demo: on this page</span>
-    </div>
   </div>
 
-  <div class="card fade-up">
-  <h3 style="margin-top:0;">Uncertainty-Driven Radar-Inertial Fusion for Instantaneous 3D Ego-Velocity Estimation (FUSION 2025)</h3>
-<p style="font-size:14px; color:#666; margin-top:-8px;">
-Joint work with P. K. Rai, N. Strokina, and R. Ghabcheloo (IEEE FUSION 2025)
-</p>
+  <div class="wrap">
 
-<p>
-This collaborative work presents an uncertainty-aware radar–inertial fusion method
-for real-time estimation of instantaneous 3D ego-velocity under challenging sensing conditions.
+    <!-- HERO -->
+    <section id="home" class="hero fade-up">
+      <div class="hero-card">
+        <div class="hero-inner">
 
-My contribution focused on the sensor fusion design and uncertainty modeling
-between radar and IMU measurements within the probabilistic estimation framework.
-</p>
+          <!-- PHOTO -->
+          <div class="photo">
+            <!-- ✅ When you have a photo, upload it (e.g., elham.jpg) and replace the placeholder block below with:
+                 <img src="elham.jpg" alt="Dr. Elham Kowsari" />
+            -->
+            <div class="placeholder">EK</div>
+          </div>
 
-<div class="figure-grid">
+          <!-- TEXT -->
+          <div>
+            <h1>Dr. Elham Kowsari</h1>
+            <div class="tagline">Control &amp; Automation for Robotics and Industrial Systems</div>
+            <div class="meta">Postdoctoral Researcher • Tampere University • Finland</div>
 
-  <div class="fig">
-    <a href="Fusion_paper1.jpg" target="_blank" rel="noopener">
-      <img src="Fusion_paper1.jpg" alt="Radar–IMU fusion architecture">
-    </a>
-    <p>Radar–IMU fusion architecture</p>
+            <p class="about">
+              I am a control and automation researcher working at the intersection of advanced control theory and real
+              industrial machinery. My work focuses on translating model predictive control, state estimation, and
+              trajectory optimization into practical, fail-operational solutions for heavy-duty machines operating under
+              actuator limits, delays, underactuation, and safety constraints.
+            </p>
+
+            <div class="pill-row">
+              <a class="pill" href="https://scholar.google.com/citations?user=OCUpHMwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+              <a class="pill" href="https://www.researchgate.net/profile/Elham-Kowsari?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
+              <a class="pill" href="https://www.linkedin.com/in/elhamkowsari/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="pill" href="https://github.com/elham-kowsari88" target="_blank" rel="noopener">GitHub</a>
+              <!-- Optional: add CV later
+              <a class="pill" href="ElhamKowsari_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade-up">
+      <h2 class="section-title">About</h2>
+      <p class="section-sub">
+        I build practical control and estimation systems for robotics and industrial automation — from modeling and design to high-fidelity simulation and validation.
+      </p>
+
+      <div class="card">
+        <p>
+          I design complete pipelines from mathematical modeling and controller/estimator design to high-fidelity simulation
+          and real-time validation. My research spans heavy-duty machine automation, sensor fusion, and reliability-aware
+          autonomy — with a strong emphasis on industrial constraints and deployable solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="fade-up">
+      <h2 class="section-title">Latest Projects</h2>
+      <p class="section-sub">
+        Selected research and industrial work with figures and demonstrations. (You can keep adding more cards below.)
+      </p>
+
+      <!-- PROJECT 1: Forestry crane paper (keep your existing filenames) -->
+      <div class="card">
+        <h3>Optimal Sway Motion Reduction in Forestry Cranes (2024)</h3>
+        <p>
+          This project presents an optimal feedforward controller for reducing sway motion in forestry cranes equipped with passive grapples.
+          The method was validated in a high-fidelity forwarder simulator and demonstrated strong reduction in grapple oscillations without additional sensors.
+        </p>
+
+        <div class="figure-grid">
+          <div class="fig">
+            <a href="Fig_2_ModofiedForwarder.JPG" target="_blank" rel="noopener">
+              <img src="Fig_2_ModofiedForwarder.JPG" alt="Forestry crane model and coordinate definitions">
+            </a>
+            <p>Model &amp; coordinate definitions</p>
+          </div>
+
+          <div class="fig">
+            <a href="Fig_1_modifiedOptimalController.JPG" target="_blank" rel="noopener">
+              <img src="Fig_1_modifiedOptimalController.JPG" alt="Optimal feedforward controller architecture">
+            </a>
+            <p>Optimal controller architecture</p>
+          </div>
+
+          <div class="fig">
+            <a href="Swaymotion-Slew.jpg" target="_blank" rel="noopener">
+              <img src="Swaymotion-Slew.jpg" alt="Sway motion response during slew motion">
+            </a>
+            <p>Sway reduction during slew motion</p>
+          </div>
+
+          <div class="fig">
+            <a href="Swaymotion-NearFar.jpg" target="_blank" rel="noopener">
+              <img src="Swaymotion-NearFar.jpg" alt="Near and far motion performance comparison">
+            </a>
+            <p>Near/far motion comparison</p>
+          </div>
+        </div>
+
+        <div class="video-section">
+          <div class="video-title">Simulation comparison (with and without controller)</div>
+          <video controls class="paper-video" preload="metadata">
+            <source src="sway_comparison.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="meta-links">
+          <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">📄 Paper</a>
+          <span>💻 Code: available on request</span>
+          <span>📊 Data: industrial simulator (confidential)</span>
+          <span>🎥 Demo: on this page</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: FUSION 2025 paper (2 figures) -->
+      <div class="card">
+        <h3>Uncertainty-Driven Radar–Inertial Fusion for Instantaneous 3D Ego-Velocity Estimation (FUSION 2025)</h3>
+        <div class="note">Joint work with P. K. Rai, N. Strokina, and R. Ghabcheloo • Your contribution: fusion design &amp; uncertainty modeling</div>
+
+        <p>
+          This collaborative work presents an uncertainty-aware radar–inertial fusion method for real-time estimation of instantaneous 3D ego-velocity
+          under challenging sensing conditions. My contribution focused on the sensor fusion design and uncertainty handling between radar and IMU measurements.
+        </p>
+
+        <!-- Replace filenames below with your uploaded images -->
+        <div class="figure-grid">
+          <div class="fig">
+            <a href="fusion_fig1.jpg" target="_blank" rel="noopener">
+              <img src="fusion_fig1.jpg" alt="Radar–IMU fusion architecture">
+            </a>
+            <p>Radar–IMU fusion architecture</p>
+          </div>
+
+          <div class="fig">
+            <a href="fusion_fig2.jpg" target="_blank" rel="noopener">
+              <img src="fusion_fig2.jpg" alt="Ego-velocity estimation illustration/results">
+            </a>
+            <p>Uncertainty-aware ego-velocity estimation</p>
+          </div>
+        </div>
+
+        <div class="meta-links">
+          <a href="https://doi.org/10.23919/FUSION65864.2025.11124007" target="_blank" rel="noopener">📄 Paper (DOI)</a>
+          <span>Radar • IMU • Estimation • Sensor Fusion • Uncertainty</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="fade-up">
+      <h2 class="section-title">Publications</h2>
+      <p class="section-sub">
+        For the full list, see Google Scholar. Below are highlighted recent publications included as project cards above.
+      </p>
+
+      <div class="card">
+        <p style="margin:0;">
+          <b>2025</b> — Uncertainty-Driven Radar–Inertial Fusion for Instantaneous 3D Ego-Velocity Estimation (FUSION) •
+          <a href="https://doi.org/10.23919/FUSION65864.2025.11124007" target="_blank" rel="noopener">DOI</a>
+        </p>
+        <p style="margin:10px 0 0;">
+          <b>2024</b> — Optimal sway motion reduction in forestry cranes (Frontiers in Robotics and AI) •
+          <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">Paper</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-up">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">
+        Add your preferred contact method here (email, university page, LinkedIn). If you want, I can format this section nicely.
+      </p>
+      <div class="card">
+        <p style="margin:0;">
+          LinkedIn: <a href="https://www.linkedin.com/in/elhamkowsari/" target="_blank" rel="noopener">linkedin.com/in/elhamkowsari</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Dr. Elham Kowsari • Built with GitHub Pages
+    </footer>
+
   </div>
 
-  <div class="fig">
-    <a href="Fusion_paper2.jpg" target="_blank" rel="noopener">
-      <img src="Fusion_paper2.jpg" alt="Uncertainty-aware ego-velocity estimation results">
-    </a>
-    <p>Uncertainty-aware ego-velocity estimation results</p>
-  </div>
-
-</div>
-
-  <div class="meta-links">
-    <a href="https://doi.org/10.23919/FUSION65864.2025.11124007" target="_blank" rel="noopener">📄 Paper (IEEE FUSION 2025)</a>
-    <span class="muted">Sensor fusion • Estimation • Radar • IMU • Uncertainty modeling</span>
-  </div>
-</div>
-
-  
-  <div class="card fade-up">
-    <p><b>Forestry crane automation:</b> Sway reduction, obstacle avoidance, and trajectory tracking using MPC with actuator dynamics.</p>
-  </div>
-
-  <div class="card fade-up">
-    <p><b>Double pendulum trajectory optimization:</b> Nonlinear modeling and optimization for underactuated systems.</p>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Elham Kowsari
-</footer>
-
-<script>
-  // Fade-in on scroll
-  const els = document.querySelectorAll('.fade-up');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-  }, { threshold: 0.12 });
-  els.forEach(el => obs.observe(el));
-</script>
-
+  <script>
+    // Fade-in on scroll
+    const els = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
