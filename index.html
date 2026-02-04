@@ -100,6 +100,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
 
     .meta-links span,
@@ -135,8 +136,8 @@
 
     .fig img {
       width: 100%;
-      height: 230px;        /* same tile height */
-      object-fit: contain;  /* show full figure */
+      height: 230px;
+      object-fit: contain;
       border-radius: 10px;
       background: #f3f5f9;
       display: block;
@@ -150,13 +151,32 @@
       font-weight: 600;
     }
 
+    /* Video */
+    .video-section{
+      margin-top: 18px;
+    }
+
+    .video-title{
+      margin: 18px 0 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .paper-video{
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+      display: block;
+    }
+
     /* Mobile layout */
     @media (max-width: 740px) {
       .figure-grid { grid-template-columns: 1fr; }
       header h1 { font-size: 30px; }
     }
 
-    
     footer {
       text-align: center;
       padding: 28px;
@@ -165,7 +185,7 @@
       color: var(--muted);
     }
 
-    /* --- Fade-in animation on scroll --- */
+    /* Fade-in animation on scroll */
     .fade-up {
       opacity: 0;
       transform: translateY(14px);
@@ -175,13 +195,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-.paper-video{
-  width:100%;
-  margin-top:12px;
-  border-radius:12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
   </style>
 </head>
 
@@ -229,7 +242,7 @@
         <a href="Fig_2_ModofiedForwarder.JPG" target="_blank" rel="noopener">
           <img src="Fig_2_ModofiedForwarder.JPG" alt="Forestry crane model and coordinate definitions">
         </a>
-        <p>Model & coordinate definitions</p>
+        <p>Model &amp; coordinate definitions</p>
       </div>
 
       <div class="fig">
@@ -254,19 +267,21 @@
       </div>
     </div>
 
-<h4 style="margin-top:22px;">Simulation comparison (with and without controller)</h4>
+    <div class="video-section">
+      <div class="video-title">Simulation comparison (with and without controller)</div>
+      <video controls class="paper-video" preload="metadata">
+        <source src="sway_comparison.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-<video controls class="paper-video">
-  <source src="sway_comparison.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<div class="links">
-   <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank">📄 Paper</a>
-   <span>💻 Code: available on request</span>
-   <span>📊 Data: industrial simulator (confidential)</span>
-   <span>🎥 Video: </span>
-</div>
+    <div class="meta-links">
+      <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full" target="_blank" rel="noopener">📄 Paper</a>
+      <span class="muted">💻 Code: available on request</span>
+      <span class="muted">📊 Data: industrial simulator (confidential)</span>
+      <span class="muted">🎥 Demo: on this page</span>
+    </div>
+  </div>
 
   <div class="card fade-up">
     <p><b>Forestry crane automation:</b> Sway reduction, obstacle avoidance, and trajectory tracking using MPC with actuator dynamics.</p>
