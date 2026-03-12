@@ -314,6 +314,27 @@
       code.style.padding = '2px 10px';
     });
 
+    // 5b. Style publication items
+    document.querySelectorAll('#publications .md-content > ul > li').forEach(li => {
+      li.classList.add('pub-item');
+      // The first strong tag is the title
+      const titleStrong = li.querySelector('strong');
+      if (titleStrong) titleStrong.classList.add('pub-title');
+    });
+    
+    // 5c. Style publication year headers (h2)
+    document.querySelectorAll('#publications .md-content > h2').forEach(h2 => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'pub-year-group';
+      h2.parentElement.insertBefore(wrapper, h2);
+      wrapper.appendChild(h2);
+      
+      // Move the following UL into the wrapper
+      if (wrapper.nextElementSibling && wrapper.nextElementSibling.tagName === 'UL') {
+        wrapper.appendChild(wrapper.nextElementSibling);
+      }
+    });
+
     // 6. Style project cards
     document.querySelectorAll('#projects .md-content > h2').forEach(h2 => {
       // Wrap from this h2 to the next h2 or hr in a card
@@ -332,6 +353,28 @@
 
     // Remove leftover <hr> in projects
     document.querySelectorAll('#projects .md-content > hr').forEach(hr => hr.remove());
+
+    // 6b. Style news items
+    document.querySelectorAll('#news .md-content > ul > li').forEach(li => {
+      li.classList.add('news-item');
+      const dateStrong = li.querySelector('strong');
+      if (dateStrong) {
+        dateStrong.classList.add('news-date');
+        // move text out of strong and put rest in news-content
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'news-content';
+        
+        while (dateStrong.nextSibling) {
+          let node = dateStrong.nextSibling;
+          // if it's the first text node, trim leading dash/hyphen
+          if (node.nodeType === Node.TEXT_NODE && !contentDiv.hasChildNodes()) {
+            node.textContent = node.textContent.replace(/^[\s—\-–]+/, '');
+          }
+          contentDiv.appendChild(node);
+        }
+        li.appendChild(contentDiv);
+      }
+    });
 
     // 7. Style contact section
     const contactSection = document.querySelector('#contact .md-content');
