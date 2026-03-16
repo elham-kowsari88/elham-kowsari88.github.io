@@ -1,6 +1,6 @@
 ---
 title: About
-I develop control, estimation, and automation solutions for robotic and heavy-duty machines — bridging advanced control theory with real industrial systems.
+subtitle: I develop control, estimation, and automation solutions for robotic and heavy-duty machines — bridging advanced control theory with real industrial systems.
 ---
 
 ## Research Focus
