@@ -1,24 +1,38 @@
----
-name: Dr. Elham Kowsari
-title: Control & Automation for Robotics and Industrial Systems
-position: Postdoctoral Researcher
-affiliation: Tampere University
-location: Finland
-photo: assets/img/profile.jpg
-photo_placeholder: EK
-links:
-  - label: Google Scholar
-    url: https://scholar.google.com/citations?user=OCUpHMwAAAAJ&hl=en
-    icon: scholar
-  - label: ResearchGate
-    url: https://www.researchgate.net/profile/Elham-Kowsari?ev=hdr_xprf
-    icon: researchgate
-  - label: LinkedIn
-    url: https://www.linkedin.com/in/elhamkowsari/
-    icon: linkedin
-  - label: GitHub
-    url: https://github.com/elham-kowsari88
-    icon: github
+I am a control and automation researcher working at the intersection of advanced control theory and real industrial machinery.
+My research focuses on translating model predictive control, state estimation, and trajectory optimization into practical and
+fail-operational solutions for complex mechanical systems operating under real actuator limits, delays, underactuation, and safety constraints.
+
+I design complete pipelines from mathematical modeling and controller design to high-fidelity simulation and real-time validation
+using platforms such as Simulink–Speedgoat and industrial simulation environments. My work has been applied to forestry cranes,
+articulated machines, autonomous vehicle subsystems, and navigation in GNSS-denied environments.
+
+By combining estimation theory, fault detection, and motion planning, I develop intelligent control architectures that remain
+reliable in the presence of uncertainty, actuator imperfections, and complex mechanical dynamics. My goal is to bridge advanced
+academic control methods with the practical realities of industrial automation and autonomous heavy-duty machinery.
+
 ---
 
-I am a control and automation researcher working at the intersection of advanced control theory and real industrial machinery. My work focuses on translating model predictive control, state estimation, and trajectory optimization into practical, fail-operational solutions for heavy-duty machines operating under actuator limits, delays, underactuation, and safety constraints.
+### Research Areas
+
+Model Predictive Control · Sensor Fusion · Fault Detection · Heavy-Duty Machine Automation · State Estimation · Autonomous Systems
+
+---
+
+### Highlights
+
+- Developed control architectures for **automation of forestry cranes and articulated heavy-duty machines**.
+- Designed **model predictive control strategies for sway reduction and trajectory tracking** under actuator and safety constraints.
+- Worked on **uncertainty-aware radar–IMU fusion for real-time 3D ego-velocity estimation**.
+- Developed **fault detection and reliability-aware control methods** for complex nonlinear systems.
+- Experience with **high-fidelity simulation and real-time validation using Simulink–Speedgoat and industrial simulators**.
+
+---
+
+### Current Research
+
+My current research focuses on control, estimation, and reliability of autonomous heavy-duty machinery.
+
+- Model predictive control for Heavy duty machine (Crane) 
+- Sensor fusion for navigation in GNSS-denied environments  
+- Fault detection and fail-operational control architectures  
+- Control under actuator delays and mechanical constraints
