@@ -57,7 +57,8 @@ This collaborative research proposes an uncertainty-aware radar-inertial fusion 
 
 ---
 
-## Model Predictive Control for Sway Reduction and Obstacle Avoidance (2026)
+## Reduced-Order State-Space Reformulation for Task-Space Predictive
+Control of an Under-actuated Hydraulic Boom(2026)
 
 **Status:** Under Review  
 **Venue:** Robotics and Autonomous Systems  
