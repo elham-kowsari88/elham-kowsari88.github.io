@@ -1,15 +1,15 @@
 ---
 title: Research Projects
-subtitle: Selected research and industrial work with figures and demonstrations.
+subtitle: Selected research and industrial projects including figures and simulation demonstrations.
 ---
 
 ## Optimal Sway Motion Reduction in Forestry Cranes (2024)
 
-- **Status:** Published
-- **Venue:** Frontiers in Robotics and AI — Learning and Adaptive Control Systems on Robotics
-- **Authors:** E. Kowsari, R. Ghabcheloo
+**Status:** Published  
+**Venue:** Frontiers in Robotics and AI — Learning and Adaptive Control Systems in Robotics  
+**Authors:** E. Kowsari, R. Ghabcheloo  
 
-This project presents an optimal feedforward controller for reducing sway motion in forestry cranes equipped with passive grapples. The method was validated in a high-fidelity forwarder simulator and demonstrated strong reduction in grapple oscillations without additional sensors.
+This work presents an optimal feedforward controller for reducing sway motion in forestry cranes equipped with passive grapples. The proposed method enables significant reduction of grapple oscillations without requiring additional sensors. The controller was validated using a high-fidelity forwarder simulator representing realistic machine dynamics and actuator constraints.
 
 ### Figures
 
@@ -19,56 +19,62 @@ This project presents an optimal feedforward controller for reducing sway motion
 
 ![Sway reduction during slew motion](assets/img/Swaymotion-Slew.jpg "Sway motion response during slew motion")
 
-![Near/far motion comparison](assets/img/Swaymotion-NearFar.jpg "Near and far motion performance comparison")
+![Near/far motion comparison](assets/img/Swaymotion-NearFar.jpg "Near/far motion performance comparison")
 
-### Video Demo
+### Video Demonstration
 
 ::video[assets/img/sway_comparison.mp4]{title="Simulation comparison — with and without controller"}
 
 ### Links
 
-- [Paper (Full Text)](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full)
-- Code: available on request
+- [Paper (Full Text)](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1417741/full)  
+- Code: available upon request  
 - Data: industrial simulator (confidential)
 
 ---
 
-## Uncertainty-Driven Radar-Inertial Fusion for 3D Ego-Velocity Estimation (FUSION 2025)
+## Uncertainty-Driven Radar–Inertial Fusion for Instantaneous 3D Ego-Velocity Estimation (FUSION 2025)
 
-- **Status:** Published
-- **Venue:** 28th International Conference on Information Fusion (FUSION), Rio de Janeiro, Brazil
-- **Authors:** P. K. Rai, E. Kowsari, N. Strokina, R. Ghabcheloo
-- **My Role:** Fusion design & uncertainty modeling
+**Status:** Published  
+**Venue:** 28th International Conference on Information Fusion (FUSION), Rio de Janeiro, Brazil  
+**Authors:** P. K. Rai, E. Kowsari, N. Strokina, R. Ghabcheloo  
 
-This collaborative work presents an uncertainty-aware radar-inertial fusion method for real-time estimation of instantaneous 3D ego-velocity under challenging sensing conditions. My contribution focused on the sensor fusion design and uncertainty handling between radar and IMU measurements.
+**Contribution:** Sensor fusion design and uncertainty modeling between radar and IMU measurements.
+
+This collaborative research proposes an uncertainty-aware radar-inertial fusion framework for real-time estimation of instantaneous 3D ego-velocity. The method integrates radar observations with inertial measurements within a probabilistic estimation framework to provide robust velocity estimation under challenging sensing conditions.
 
 ### Figures
 
-![Radar-IMU fusion architecture](assets/img/Fusion_paper1.jpg "Radar-IMU fusion architecture")
+![Radar–IMU fusion architecture](assets/img/Fusion_paper1.jpg "Radar–IMU fusion architecture")
 
-![Uncertainty-aware ego-velocity estimation](assets/img/Fusion_paper2.jpg "Ego-velocity estimation illustration/results")
+![Uncertainty-aware ego-velocity estimation](assets/img/Fusion_paper2.jpg "Ego-velocity estimation illustration and coordinate framework")
 
 ### Links
 
 - [Paper (DOI)](https://doi.org/10.23919/FUSION65864.2025.11124007)
-- Keywords: Radar, IMU, Estimation, Sensor Fusion, Uncertainty
+
+**Keywords:** Radar · IMU · Sensor Fusion · Ego-Velocity Estimation · Uncertainty Modeling
 
 ---
 
 ## Model Predictive Control for Sway Reduction and Obstacle Avoidance (2026)
 
-- **Status:** Under Review
-- **Venue:** Robotics and Autonomous Systems
-- **Authors:** E. Kowsari, R. Ghabcheloo
+**Status:** Under Review  
+**Venue:** Robotics and Autonomous Systems  
+**Authors:** E. Kowsari, R. Ghabcheloo  
 
-A novel state-space model of a boom with grapple, combined with MPC for simultaneous sway reduction and obstacle avoidance. Details available upon publication.
+This work proposes a novel state-space representation of a crane boom–grapple system combined with model predictive control for simultaneous sway reduction and obstacle avoidance. The approach explicitly incorporates actuator dynamics and practical control constraints.
+
+Details will be available after publication.
 
 ---
 
-## IMU to Joint Extrinsic Calibration of Articulated Link Pairs (2026)
+## IMU-to-Joint Extrinsic Calibration of Articulated Link Pairs (2026)
 
-- **Status:** Under Review
-- **Venue:** IFAC 2026
-- **Authors:** A. Mirjalili, E. Kowsari, D. Baumann, R. Ghabcheloo
+**Status:** Under Review  
+**Venue:** IFAC 2026  
+**Authors:** A. Mirjalili, E. Kowsari, D. Baumann, R. Ghabcheloo  
 
-A novel calibration method for IMU-to-joint extrinsic parameters in articulated heavy-duty machinery. Details available upon publication.
+This work introduces a calibration method for estimating IMU-to-joint extrinsic parameters in articulated heavy-duty machines. The proposed method enables accurate alignment between inertial sensors and mechanical joints, improving motion estimation and control accuracy.
+
+Details will be available after publication.
