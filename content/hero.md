@@ -1,3 +1,4 @@
+---
 I am a control and automation researcher working at the intersection of advanced control theory and real industrial machinery.
 My research focuses on translating model predictive control, state estimation, and trajectory optimization into practical and
 fail-operational solutions for complex mechanical systems operating under real actuator limits, delays, underactuation, and safety constraints.
@@ -9,7 +10,6 @@ articulated machines, autonomous vehicle subsystems, and navigation in GNSS-deni
 By combining estimation theory, fault detection, and motion planning, I develop intelligent control architectures that remain
 reliable in the presence of uncertainty, actuator imperfections, and complex mechanical dynamics. My goal is to bridge advanced
 academic control methods with the practical realities of industrial automation and autonomous heavy-duty machinery.
-
 ---
 
 ### Research Areas
