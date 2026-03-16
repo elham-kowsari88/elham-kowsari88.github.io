@@ -1,29 +1,39 @@
 ---
 title: About
-subtitle: I build practical control and estimation systems for robotics and industrial automation — from modeling and design to high-fidelity simulation and validation.
+I develop control, estimation, and automation solutions for robotic and heavy-duty machines — bridging advanced control theory with real industrial systems.
 ---
 
 ## Research Focus
 
-I design complete pipelines from mathematical modeling and controller/estimator design to high-fidelity simulation and real-time validation. My research spans heavy-duty machine automation, sensor fusion, and reliability-aware autonomy — with a strong emphasis on industrial constraints and deployable solutions.
+I develop control and estimation systems for complex mechanical and robotic systems operating under real industrial constraints. My work focuses on translating advanced control methods — including model predictive control, state estimation, and trajectory optimization — into practical and reliable solutions for heavy-duty machines.
+
+I design complete pipelines from mathematical modeling and controller/estimator design to high-fidelity simulation and real-time validation using environments such as Simulink–Speedgoat and industrial simulators. My research has been applied to forestry cranes, articulated machines, autonomous vehicle subsystems, and navigation in GNSS-denied environments.
+
+Across these applications, my goal is to bridge academic control methods with the practical realities of industrial automation, where actuator limits, delays, uncertainty, and safety constraints must all be addressed simultaneously.
 
 ## Core Expertise
 
-- **Model Predictive Control (MPC)** — Design and implementation for constrained nonlinear systems
-- **State Estimation & Sensor Fusion** — Kalman filtering, radar-inertial fusion, uncertainty quantification
-- **Heavy-Duty Machine Automation** — Forestry cranes, boom systems, industrial manipulators
-- **Trajectory Optimization** — Sway reduction, obstacle avoidance, motion planning
-- **Fault Detection & Diagnostics** — Nonparametric methods, Gaussian process-based approaches
+- **Model predictive control (MPC)**       
+         Constraint-aware control design for nonlinear and underactuated systems, including trajectory optimization and motion control under actuator dynamics and delays.
+- **Automation of Heavy-Duty Machinery**  
+Control-oriented modeling and automation of articulated machines and forestry cranes, including sway reduction, trajectory tracking, and obstacle-aware motion.
 
+- **Fault Detection &amp; Diagnostics**        
+         Detection and isolation of abnormal system behavior, actuator faults, and reliability-aware control architectures for safety-critical systems.
+
+
+- **Fusion &amp; State Estimation**
+         Radar–IMU fusion, ego-velocity estimation, and uncertainty-aware estimation methods for navigation and perception in challenging environments, including GNSS-denied scenarios.
 ## Education
 
 - **Ph.D. in Control Engineering** — Shiraz University of Technology, Iran
 - **M.Sc. in Control Engineering** — Shiraz University of Technology, Iran
-- **B.Sc. in Electrical Engineering** — University of Kerman, Iran
+- **B.Sc. in Electrical Engineering** — Hamedan University of Technolgy, Iran
 
 ## Professional Experience
 
+
 - **Postdoctoral Researcher** — Tampere University, Finland (Current)
-  - Autonomous heavy-duty machines, MPC for crane control, sensor fusion
+   Research on control, estimation, and automation for autonomous heavy-duty machines, including model predictive control for crane systems, motion control under actuator constraints, and sensor fusion for navigation.
 - **Research Associate** — Shiraz University of Technology
-  - Nonlinear MPC for DC microgrids, stochastic control
+ Research on nonlinear model predictive control, stochastic control, and fault detection methods for DC microgrids and nonlinear dynamical systems.
